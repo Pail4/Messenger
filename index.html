@@ -10,18 +10,24 @@
 </head>
 <body>
     <div class="main">
+
+        <!-- MENU BUTTONS -->
         <nav class="nav-panel">
             <button class="nav-panel__settings">Настройки</button>
             <button class="nav-panel__signout">Выйти</button>
         </nav>
+
+        <!-- CHAT -->
         <div class="window-wrap">
             <div class="window">
-                <div class="message message_yourth">Я: Добрый день! <div class="message__time">18:45</div></div>
+                <div class="message message_mine">Я: Добрый день! <div class="message__time">18:45</div></div>
                 <div class="message message_their">Собеседник мой: Добрый день!<div class="message__time">18:45</div></div>
                 <div class="message message_their">Собеседник мой: А это второе и, кажется, оно очень длинное, чтобы поместиться на одной строке<div class="message__time">18:45</div></div>
-                <div class="message message_yourth message_yourth_undelivered">Я: Добрый день!<div class="message__time">18:45</div></div>
+                <div class="message message_mine message_mine_undelivered">Я: Добрый день!<div class="message__time">18:45</div></div>
             </div>
         </div>
+
+        <!-- MESSAGE INPUT -->
         <div class="type">
             <form action="" class="type__form">
                 <input type="text" class="type__input" placeholder="сообщение...">

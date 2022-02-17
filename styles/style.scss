@@ -24,6 +24,8 @@ body{
     
     background-color: #3c7ba0;
 }
+
+/////////// MENU BUTTONS /////////////////
 .nav-panel {
     display: flex;
     justify-content: space-between;
@@ -38,6 +40,7 @@ body{
 }
 
 
+/////////// CHAT //////////////////
 .window-wrap{
     height: 437px;
     overflow-y: auto;
@@ -56,18 +59,18 @@ body{
 .message {
     min-height: 52px;
     width: fit-content;
-    max-width: 288px;
+    max-width: 280px;
     margin: 8px;
     margin-top: 0;
     padding: 8px;
 
     background-color: $MESG;
 }
-.message_yourth {
+.message_mine {
     margin-left: auto;
     text-align: right;
 }
-.message_yourth_undelivered{
+.message_mine_undelivered{
     background-color: $MESG_UNDEL;
 }
 .message__time {
@@ -81,6 +84,7 @@ body{
 }
 
 
+/////////// MESSAGE INPUT //////////////////
 .type {
 }
 .type__form {
