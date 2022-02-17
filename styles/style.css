@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+body {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.main {
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 320px;
+  height: 533px;
+  padding: 8px;
+  background-color: #3c7ba0;
+}
+
+.nav-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.nav-panel__settings,
+.nav-panel__signout {
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid #000000;
+}
+
+.window-wrap {
+  height: 437px;
+  overflow-y: auto;
+  margin-bottom: 8px;
+  vertical-align: bottom;
+  background-color: #fff;
+  border: 1px solid #000000;
+}
+
+.window {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  min-height: 100%;
+}
+
+.message {
+  min-height: 52px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 288px;
+  margin: 8px;
+  margin-top: 0;
+  padding: 8px;
+  background-color: #E5E5E5;
+}
+
+.message_yourth {
+  margin-left: auto;
+  text-align: right;
+}
+
+.message_yourth_undelivered {
+  background-color: #F7F7F7;
+}
+
+.message__time {
+  text-align: right;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.type__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 32px;
+  max-height: 64px;
+}
+
+.type__form > * {
+  border: 1px solid #000000;
+}
+
+.type__input {
+  min-height: 32px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-left: 7px;
+  margin-right: 8px;
+  -webkit-box-flex: 5;
+      -ms-flex-positive: 5;
+          flex-grow: 5;
+}
+
+.type__send {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+/*# sourceMappingURL=style.css.map */

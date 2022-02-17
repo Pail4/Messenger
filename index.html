@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/clear.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <title>Messenger</title>
 </head>
 <body>
     <div class="main">
         <nav class="nav-panel">
             <button class="nav-panel__settings">Настройки</button>
-            <button class="nav-panel__signin">Войти</button>
+            <button class="nav-panel__signout">Выйти</button>
         </nav>
-        <div class="window">
-            <div class="message message_yourth">Я: Добрый день! <div class="message__time">18:45</div></div>
-            <div class="message message_their">Собеседник мой: Добрый день!<div class="message__time">18:45</div></div>
-            <div class="message message_their">Собеседник мой: А это второе и, кажется, оно очень длинное, чтобы поместиться на одной строке<div class="message__time">18:45</div></div>
-            <div class="message message_yourth">Я: Добрый день!<div class="message__time">18:45</div></div>
+        <div class="window-wrap">
+            <div class="window">
+                <div class="message message_yourth">Я: Добрый день! <div class="message__time">18:45</div></div>
+                <div class="message message_their">Собеседник мой: Добрый день!<div class="message__time">18:45</div></div>
+                <div class="message message_their">Собеседник мой: А это второе и, кажется, оно очень длинное, чтобы поместиться на одной строке<div class="message__time">18:45</div></div>
+                <div class="message message_yourth message_yourth_undelivered">Я: Добрый день!<div class="message__time">18:45</div></div>
+            </div>
         </div>
         <div class="type">
             <form action="" class="type__form">
@@ -25,5 +29,6 @@
             </form>
         </div>
     </div>
+    <div class="settings"></div>
 </body>
 </html>
