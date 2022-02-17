@@ -23,10 +23,18 @@
         <!-- CHAT -->
         <div class="window-wrap">
             <div class="window">
-                <div class="message message_mine">Я: Добрый день! <div class="message__time">18:45</div>
-                </div>
-                <div class="message message_their">Собеседник мой: Добрый день!<div class="message__time">18:45</div>
-                </div>
+                <template id="my_message">
+                    <div class="message message_mine">
+                        <span class="message__sender">Я</span>: <span class="message__content"></span><div class="message__time"></div>
+                    </div>
+                </template>
+                <template id="their_message">
+                    <div class="message message_their">
+                        <span class="message__sender"></span>: <span class="message__content"></span><div class="message__time"></div>
+                    </div>
+                </template>
+                <div class="message message_mine">Я: Добрый день! <div class="message__time">18:45</div></div>
+                <div class="message message_their">Собеседник мой: Добрый день!<div class="message__time">18:45</div></div>
                 <div class="message message_their">Собеседник мой: А это второе и, кажется, оно очень длинное, чтобы
                     поместиться на одной строке<div class="message__time">18:45</div>
                 </div>
@@ -60,6 +68,7 @@
             </div>
         </div>
     </div>
+    <script type="module" src="./scripts/view.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
 </body>
-
 </html>
