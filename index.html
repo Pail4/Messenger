@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,9 @@
     <link rel="stylesheet" href="./styles/style.css">
     <title>Messenger</title>
 </head>
+
 <body>
+    <!-- MAIN WINDOW -->
     <div class="main">
 
         <!-- MENU BUTTONS -->
@@ -20,10 +23,15 @@
         <!-- CHAT -->
         <div class="window-wrap">
             <div class="window">
-                <div class="message message_mine">Я: Добрый день! <div class="message__time">18:45</div></div>
-                <div class="message message_their">Собеседник мой: Добрый день!<div class="message__time">18:45</div></div>
-                <div class="message message_their">Собеседник мой: А это второе и, кажется, оно очень длинное, чтобы поместиться на одной строке<div class="message__time">18:45</div></div>
-                <div class="message message_mine message_mine_undelivered">Я: Добрый день!<div class="message__time">18:45</div></div>
+                <div class="message message_mine">Я: Добрый день! <div class="message__time">18:45</div>
+                </div>
+                <div class="message message_their">Собеседник мой: Добрый день!<div class="message__time">18:45</div>
+                </div>
+                <div class="message message_their">Собеседник мой: А это второе и, кажется, оно очень длинное, чтобы
+                    поместиться на одной строке<div class="message__time">18:45</div>
+                </div>
+                <div class="message message_mine message_mine_undelivered">Я: Добрый день!<div class="message__time">18:45</div>
+                </div>
             </div>
         </div>
 
@@ -34,7 +42,24 @@
                 <button class="type__send">-></button>
             </form>
         </div>
+
+        <!-- SETTINGS TAB -->
+        <div class="settings-wrap closed">
+            <div class="settings ">
+                <div class="settings__head">
+                    <h2 class="settings__header">Настройки</h2>
+                    <button class="settings__close close-btn"></button>
+                </div>
+                <div class="settings__name">
+                    <h3 class="settings__name__header">Имя в чате</h3>
+                    <form action="" class="settings__name__form">
+                        <input type="text" class="settings__name__form__input">
+                        <button class="settings__name__form__submit">-></button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="settings"></div>
 </body>
+
 </html>

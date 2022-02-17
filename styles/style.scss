@@ -15,6 +15,7 @@ body{
 
 
 .main {
+    position: relative;
     margin: 20px auto;
     display: flex;
     flex-direction: column;
@@ -87,7 +88,9 @@ body{
 /////////// MESSAGE INPUT //////////////////
 .type {
 }
-.type__form {
+
+.type__form,
+.settings__name__form {
     display: flex;
     min-height: 32px;
     max-height: 64px;
@@ -95,13 +98,62 @@ body{
         border: $BRR;
     }
 }
-.type__input {
+.type__input,
+.settings__name__form__input {
     min-height: 32px;
     height: fit-content;
     padding-left: 7px;
     margin-right: 8px;
     flex-grow: 5;
 }
-.type__send {
+.type__send,
+.settings__name__form__submit {
     flex-grow: 1;
+}
+
+/////////////SETTINGS TAB////////////////////
+.settings-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.settings{
+    position: absolute;
+    top: 106px;
+    left: 24px;
+    width: 273px;
+    height: 319px;
+    padding: 16px 14px;
+    background-color: #fff;
+    box-shadow: 0px 0px 63px 2px #444;
+}
+
+.settings__head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.settings__close {
+    width: 21px;
+    height: 21px;
+    background-color: transparent;
+}
+.close-btn{
+    background: url("../imgs/close.svg") no-repeat;
+}
+
+.settings__name__header {
+    margin-bottom: 8px;
+}
+.settings__name__form__input {
+    width: 207px;
+}
+.settings__name__form__submit {
+    width: 32px;
+}
+
+.closed{
+    display: none;
 }
