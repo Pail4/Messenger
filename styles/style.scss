@@ -108,22 +108,25 @@ body{
     height: fit-content;
     padding-left: 7px;
     margin-right: 8px;
+    margin-bottom: 8px;
     flex-grow: 5;
+    border: $BRR;
 }
 .type__send,
 .settings__name__form__submit {
+    height: 32px;
     flex-grow: 1;
 }
 
 /////////////SETTINGS TAB////////////////////
-.settings-wrap{
+.tab-wrap{
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
 }
-.settings{
+.tab{
     position: absolute;
     top: 106px;
     left: 24px;
@@ -134,19 +137,18 @@ body{
     box-shadow: 0px 0px 63px 2px #444;
 }
 
-.settings__head {
+.tab__head {
     display: flex;
     justify-content: space-between;
     margin-bottom: 16px;
 }
-.settings__close {
+.tab__close {
     width: 21px;
     height: 21px;
     background-color: transparent;
-}
-.close-btn{
     background: url("../imgs/close.svg") no-repeat;
 }
+
 
 .settings__name__header {
     margin-bottom: 8px;

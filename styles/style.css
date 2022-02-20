@@ -119,19 +119,22 @@ body {
   height: fit-content;
   padding-left: 7px;
   margin-right: 8px;
+  margin-bottom: 8px;
   -webkit-box-flex: 5;
       -ms-flex-positive: 5;
           flex-grow: 5;
+  border: 1px solid #000000;
 }
 
 .type__send,
 .settings__name__form__submit {
+  height: 32px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
 
-.settings-wrap {
+.tab-wrap {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -139,7 +142,7 @@ body {
   left: 0;
 }
 
-.settings {
+.tab {
   position: absolute;
   top: 106px;
   left: 24px;
@@ -151,7 +154,7 @@ body {
           box-shadow: 0px 0px 63px 2px #444;
 }
 
-.settings__head {
+.tab__head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -161,13 +164,10 @@ body {
   margin-bottom: 16px;
 }
 
-.settings__close {
+.tab__close {
   width: 21px;
   height: 21px;
   background-color: transparent;
-}
-
-.close-btn {
   background: url("../imgs/close.svg") no-repeat;
 }
 

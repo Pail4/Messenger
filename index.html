@@ -16,8 +16,8 @@
 
         <!-- MENU BUTTONS -->
         <nav class="nav-panel">
-            <button class="nav-panel__settings">Настройки</button>
-            <button class="nav-panel__signout">Выйти</button>
+            <button class="nav-panel__settings nav-panel__btn" data-tab="settings">Настройки</button>
+            <button class="nav-panel__signout nav-panel__btn" data-tab="authorization">Выйти</button>
         </nav>
 
         <!-- CHAT -->
@@ -51,24 +51,58 @@
             </form>
         </div>
 
-        <!-- SETTINGS TAB -->
-        <div class="settings-wrap closed">
-            <div class="settings ">
-                <div class="settings__head">
-                    <h2 class="settings__header">Настройки</h2>
-                    <button class="settings__close close-btn"></button>
+        <!-- TABS -->
+        <!-- settings -->
+        <div class="tab-wrap closed">
+            <div class="tab settings">
+                <div class="tab__head">
+                    <h2 class="tab__header">Настройки</h2>
+                    <button class="tab__close close-btn"></button>
                 </div>
                 <div class="settings__name">
                     <h3 class="settings__name__header">Имя в чате</h3>
-                    <form action="" class="settings__name__form">
+                    <form action="" class="__name__form">
                         <input type="text" class="settings__name__form__input">
                         <button class="settings__name__form__submit">-></button>
                     </form>
                 </div>
             </div>
         </div>
+        <!-- authorization -->
+        <div class="tab-wrap closed">
+            <div class="tab authorization">
+                <div class="tab__head">
+                    <h2 class="tab__header">Авторизация</h2>
+                    <button class="tab__close close-btn"></button>
+                </div>
+                <div class="authorization__field">
+                    <h3 class="authorization__field__header">Почта:</h3>
+                    <form action="" class="authorization__form">
+                        <input type="text" class="authorization__form__input settings__name__form__input">
+                        <button class="nav-panel__settings">Получить код</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- authorization access -->
+        <div class="tab-wrap closed">
+            <div class="tab authorization-access">
+                <div class="tab__head">
+                    <h2 class="tab__header">Подтверждение</h2>
+                    <button class="tab__close close-btn"></button>
+                </div>
+                <div class="authorization__field">
+                    <h3 class="authorization__field__header">Код:</h3>
+                    <form action="" class="authorization-access__form">
+                        <input type="text" class="authorization-access__form__input settings__name__form__input">
+                        <button class="nav-panel__settings">Войти</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     <script type="module" src="./scripts/view.js"></script>
+    <script type="module" src="./scripts/storage.js"></script>
     <script type="module" src="./scripts/main.js"></script>
 </body>
 </html>

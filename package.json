@@ -1,0 +1,30 @@
+{
+  "name": "messenger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./scripts/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pail4/Messenger.git"
+  },
+  "keywords": [
+    "web",
+    "app",
+    "messenger"
+  ],
+  "author": "Pail4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pail4/Messenger/issues"
+  },
+  "homepage": "https://github.com/Pail4/Messenger#readme",
+  "dependencies": {
+    "js-cookie": "^3.0.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.3.2"
+  }
+}
