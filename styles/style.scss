@@ -103,7 +103,7 @@ body{
     }
 }
 .type__input,
-.settings__name__form__input {
+.form__input {
     min-height: 32px;
     height: fit-content;
     padding-left: 7px;
@@ -113,7 +113,7 @@ body{
     border: $BRR;
 }
 .type__send,
-.settings__name__form__submit {
+.form__submit {
     height: 32px;
     flex-grow: 1;
 }
@@ -155,9 +155,11 @@ body{
 }
 .settings__name__form__input {
     width: 207px;
+    height: 32px;
 }
 .settings__name__form__submit {
     width: 32px;
+    height: 32px;
 }
 
 .closed{

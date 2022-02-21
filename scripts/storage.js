@@ -1,13 +1,17 @@
-import {Cookies} from "js-cookie";
+import Cookies from 'js-cookie';
+
 export const user = {
   nickname: "",
   email: "",
   token: "",
-  saveToken() {
-    Cookies.set('token', this.token);
+  saveUserdata() {
+    Cookies.set('user', JSON.stringify(this));
   },
-  getToken() {
-    return Cookies.get('token');
+  getUserdata() {
+    const data = JSON.parse(Cookies.get('user') || {});
+    for (const key in data){
+      this[key] = data[key];
+    }
   }
 }
 

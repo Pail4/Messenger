@@ -14,6 +14,9 @@ export const UI = {
   tabs: {
     settings: {
       tab: document.querySelector('.settings'),
+      forms: {
+        changeUsername: document.querySelector('.settings__name__form')
+      }
     },
     authorization: {
       tab: document.querySelector('.authorization'),

@@ -112,7 +112,7 @@ body {
 }
 
 .type__input,
-.settings__name__form__input {
+.form__input {
   min-height: 32px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -127,7 +127,7 @@ body {
 }
 
 .type__send,
-.settings__name__form__submit {
+.form__submit {
   height: 32px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -177,10 +177,12 @@ body {
 
 .settings__name__form__input {
   width: 207px;
+  height: 32px;
 }
 
 .settings__name__form__submit {
   width: 32px;
+  height: 32px;
 }
 
 .closed {
