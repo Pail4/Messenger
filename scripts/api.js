@@ -4,25 +4,27 @@ export const apiData = {
     ORIGIN: 'https://chat1-341409.oa.r.appspot.com/',
     API: 'https://chat1-341409.oa.r.appspot.com/api/',
     USER: 'https://chat1-341409.oa.r.appspot.com/api/user',
-    getUserData: 'https://chat1-341409.oa.r.appspot.com/api/user/me'
+    getUserData: 'https://chat1-341409.oa.r.appspot.com/api/user/me',
+    MESSAGES: 'https://chat1-341409.oa.r.appspot.com/api/messages/'
   },
   getHeadersUnsigned(){
     return {
       'Content-Type': 'application/json;charset=utf-8',
     }
   },
-  getHeadersSigned(){
+  getHeadersSigned(token){
     return {
       'Content-Type': 'application/json;charset=utf-8',
-      Authorization: `Bearer ${user.token}`
+      Authorization: `Bearer ${token || user.token}`
     }
   },
 }
 
 export function sendRequest(url, method, headers, body) {
+  const strBody = body? JSON.stringify(body) : undefined;
   return fetch(url, {
     method,
     headers,
-    'body': JSON.stringify(body)
+    'body': strBody
   });
 }

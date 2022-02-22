@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Pail4/Messenger#readme",
   "dependencies": {
+    "date-fns": "^2.28.0",
     "js-cookie": "^3.0.1"
   },
   "devDependencies": {
