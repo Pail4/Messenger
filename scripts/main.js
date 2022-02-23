@@ -106,4 +106,3 @@ function checkAuth(){
 
 setEventsListeners();
 checkAuth();
-loadMessages();

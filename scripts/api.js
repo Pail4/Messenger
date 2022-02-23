@@ -5,7 +5,11 @@ export const apiData = {
     API: 'https://chat1-341409.oa.r.appspot.com/api/',
     USER: 'https://chat1-341409.oa.r.appspot.com/api/user',
     getUserData: 'https://chat1-341409.oa.r.appspot.com/api/user/me',
-    MESSAGES: 'https://chat1-341409.oa.r.appspot.com/api/messages/'
+    MESSAGES: 'https://chat1-341409.oa.r.appspot.com/api/messages/',
+    getSocket(){
+      user.getUserdata();
+      return `ws://chat1-341409.oa.r.appspot.com/websockets?${user.token}`
+    }
   },
   getHeadersUnsigned(){
     return {
@@ -18,6 +22,7 @@ export const apiData = {
       Authorization: `Bearer ${token || user.token}`
     }
   },
+
 }
 
 export function sendRequest(url, method, headers, body) {
@@ -28,3 +33,4 @@ export function sendRequest(url, method, headers, body) {
     'body': strBody
   });
 }
+

@@ -1,5 +1,6 @@
-import {format} from "date-fns";
+import { format } from "date-fns";
 import { user } from "./storage";
+import { socket } from "./webSocket.js";
 
 export const UI = {
   navButtons: {
@@ -64,24 +65,34 @@ class Message {
   }
 }
 
-
 export function updateUI(user, messages){
   if (user) UI.chat.username.textContent = user.name;
   if (messages) updateMessages(messages);
 }
 
-function updateMessages(messages){
-  for (const msg of messages.messages){
-    const msgNode = new Message(msg.username, msg.message, format(new Date(msg.createdAt), 'dd.MM, HH:mm'));
-    UI.chat.window.append(msgNode.getNode());
-  }
+function updateMessages(event){
+  const msg = JSON.parse(event.data);
+  const msgNode = new Message(msg.user.name, msg.text, format(new Date(msg.createdAt), 'dd.MM, HH:mm'));
+  UI.chat.window.append(msgNode.getNode());
+  UI.chat.window.parentNode.scrollTo(0, UI.chat.window.parentNode.scrollHeight);
+  // for (const msg of messages.messages){
+  //   const msgNode = new Message(msg.username, msg.message, format(new Date(msg.createdAt), 'dd.MM, HH:mm'));
+  //   UI.chat.window.append(msgNode.getNode());
+  // }
 }
 
 export function sendMessage(event){
   event.preventDefault();
-  const msgNode = new Message(user.name, UI.chat.inputs.input.value, format(new Date(), 'HH:mm'));
+  socket.send(JSON.stringify({
+    text: UI.chat.inputs.input.value
+  }));
+  // const msgNode = new Message(user.name, UI.chat.inputs.input.value, format(new Date(), 'HH:mm'));
 
-  UI.chat.window.append(msgNode.getNode());
-  UI.chat.window.parentNode.scrollTo(0, UI.chat.window.parentNode.scrollHeight);
+  // UI.chat.window.append(msgNode.getNode());
+  // UI.chat.window.parentNode.scrollTo(0, UI.chat.window.parentNode.scrollHeight);
   UI.chat.inputs.form.reset();
 }
+
+
+
+socket.onmessage = updateMessages
