@@ -78,7 +78,6 @@ export function updateUI(user, messages){
 export function loadPartOfMessages(){
   let msg = messages.messages.pop();
   let i = 20;
-  if (!msg) UI.chat.window.prepend('end')
   while (i && msg){
     new Message(msg.user.name, msg.text, format(new Date(msg.createdAt), 'dd.MM, HH:mm')).pushNode('prepend');
     msg = messages.messages.pop();
@@ -87,8 +86,12 @@ export function loadPartOfMessages(){
 }
 
 function updateMessage(message){
+  const chat = UI.chat.window.parentNode;
+  const needScroll = chat.scrollHeight <= chat.scrollTop + chat.offsetHeight + 1;
   new Message(message.user.name, message.text, format(new Date(message.createdAt), 'dd.MM, HH:mm')).pushNode('append');
-  UI.chat.window.parentNode.scrollTo(0, UI.chat.window.parentNode.scrollHeight);
+  if (needScroll){
+    chat.scrollTo(0, UI.chat.window.parentNode.scrollHeight);
+  }
 }
 
 export function sendMessage(event){
