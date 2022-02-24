@@ -9,10 +9,15 @@ export const user = {
   },
   getUserdata() {
     const temp = Cookies.get('user');
-    if (!temp) throw new Error('Authorization error');
+    if (!temp) return false;
     const data = JSON.parse(temp);
     for (const key in data){
       this[key] = data[key];
     };
+    return true;
   }
 }
+
+export const messages = {
+  messages: []
+};

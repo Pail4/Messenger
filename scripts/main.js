@@ -1,5 +1,5 @@
-import {UI, updateUI, sendMessage} from "./view.js";
-import { user } from "./storage.js";
+import {UI, updateUI, sendMessage, loadPartOfMessages} from "./view.js";
+import { user,messages } from "./storage.js";
 import { apiData, sendRequest } from "./api.js";
 
 function openTab(){
@@ -9,7 +9,6 @@ function openTab(){
 function closeTab(){
   this.parentNode.parentNode.parentNode.classList.toggle('closed');
 }
-
 
 function authorization(event){
   event.preventDefault();
@@ -60,7 +59,7 @@ function loadUserdata(token){
 
 function changeUsername(event) {
   event.preventDefault();
-  //
+  
   const newName = this.querySelector('.settings__name__form__input').value;
   const request = sendRequest(apiData.URLS.USER, 'PATCH', apiData.getHeadersSigned(), {'name': newName});
   request.then(response => response.json())
@@ -75,7 +74,9 @@ function loadMessages(){
   const request = sendRequest(apiData.URLS.MESSAGES, 'GET', apiData.getHeadersSigned());
   request.then(response => response.json())
     .then(obj => {
-      updateUI(null, obj);
+      messages.messages = obj.messages;
+      loadPartOfMessages();
+      UI.chat.window.parentNode.scrollTo(0, UI.chat.window.parentNode.scrollHeight);
     })
 }
 
@@ -95,14 +96,14 @@ function setEventsListeners(){
 }
 
 function checkAuth(){
-  try {
+  if(user.getUserdata()) {
     //why error not catched?
-    user.getUserdata();
     loadUserdata(user.token);
-  } catch(error){
+  } else{
     openTab.apply({dataset:{tab: 'authorization'}});
   }
 }
 
 setEventsListeners();
 checkAuth();
+loadMessages();

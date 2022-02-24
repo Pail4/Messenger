@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { user } from "./storage";
+import { user,messages } from "./storage.js";
 import { socket } from "./webSocket.js";
 
 export const UI = {
@@ -58,8 +58,11 @@ class Message {
     
     this.messageNode.querySelector('.message__content').textContent = message;
     this.messageNode.querySelector('.message__time').textContent = date;
+    return this;
   }
-
+  pushNode(where){
+    UI.chat.window[where](this.getNode());
+  }
   getNode(){
     return this.messageNode;
   }
@@ -67,18 +70,25 @@ class Message {
 
 export function updateUI(user, messages){
   if (user) UI.chat.username.textContent = user.name;
-  if (messages) updateMessages(messages);
+  if (messages) messages.forEach(msg => {
+    updateMessage(msg);
+  });
 }
 
-function updateMessages(event){
-  const msg = JSON.parse(event.data);
-  const msgNode = new Message(msg.user.name, msg.text, format(new Date(msg.createdAt), 'dd.MM, HH:mm'));
-  UI.chat.window.append(msgNode.getNode());
+export function loadPartOfMessages(){
+  let msg = messages.messages.pop();
+  let i = 20;
+  if (!msg) UI.chat.window.prepend('end')
+  while (i && msg){
+    new Message(msg.user.name, msg.text, format(new Date(msg.createdAt), 'dd.MM, HH:mm')).pushNode('prepend');
+    msg = messages.messages.pop();
+    i--;
+  }
+}
+
+function updateMessage(message){
+  new Message(message.user.name, message.text, format(new Date(message.createdAt), 'dd.MM, HH:mm')).pushNode('append');
   UI.chat.window.parentNode.scrollTo(0, UI.chat.window.parentNode.scrollHeight);
-  // for (const msg of messages.messages){
-  //   const msgNode = new Message(msg.username, msg.message, format(new Date(msg.createdAt), 'dd.MM, HH:mm'));
-  //   UI.chat.window.append(msgNode.getNode());
-  // }
 }
 
 export function sendMessage(event){
@@ -86,13 +96,17 @@ export function sendMessage(event){
   socket.send(JSON.stringify({
     text: UI.chat.inputs.input.value
   }));
-  // const msgNode = new Message(user.name, UI.chat.inputs.input.value, format(new Date(), 'HH:mm'));
-
-  // UI.chat.window.append(msgNode.getNode());
-  // UI.chat.window.parentNode.scrollTo(0, UI.chat.window.parentNode.scrollHeight);
   UI.chat.inputs.form.reset();
 }
 
+socket.onmessage = (event) => {
+  updateMessage(JSON.parse(event.data));
+};
 
-
-socket.onmessage = updateMessages
+UI.chat.window.parentNode.addEventListener('scroll', (event) => {
+  if (event.target.scrollTop == 0) {
+    const y = event.target.scrollHeight;
+    loadPartOfMessages();
+    event.target.scrollTo(0, event.target.scrollHeight - y)
+  };
+});
