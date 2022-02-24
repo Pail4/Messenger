@@ -5,6 +5,7 @@ body {
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
+  background: url(../imgs/background.jpg);
 }
 
 .main {
@@ -17,10 +18,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 320px;
+  max-width: 420px;
   height: 533px;
   padding: 8px;
-  background-color: #3c7ba0;
+  background-color: #BFD9E1;
 }
 
 .nav-panel {
@@ -45,12 +46,8 @@ body {
   overflow-y: auto;
   margin-bottom: 8px;
   vertical-align: bottom;
-  background-color: #fff;
+  background: url(../imgs/background.jpg);
   border: 1px solid #000000;
-}
-
-.window-wrap::-webkit-scrollbar {
-  display: none;
 }
 
 .window {
@@ -76,7 +73,7 @@ body {
   margin: 8px;
   margin-top: 0;
   padding: 8px;
-  word-break: break-all;
+  word-break: break-word;
   background-color: #E5E5E5;
 }
 
