@@ -1,10 +1,13 @@
 {
   "name": "messenger",
+  "homepage": "https://hukakhepak.github.io/Messenger",
   "version": "1.0.0",
   "description": "",
-  "main": "./scripts/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npx parcel build index.html",
+    "deploy": "gh-pages -d dist",
+    "start": "npx parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -20,12 +23,11 @@
   "bugs": {
     "url": "https://github.com/Pail4/Messenger/issues"
   },
-  "homepage": "https://github.com/Pail4/Messenger#readme",
   "dependencies": {
     "date-fns": "^2.28.0",
     "js-cookie": "^3.0.1"
   },
   "devDependencies": {
-    "parcel": "^2.3.2"
+    "parcel": "^2.8.0"
   }
 }

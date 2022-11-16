@@ -41,7 +41,7 @@ export const UI = {
     myMessage: document.querySelector('#my_message'),
     theirMessage: document.querySelector('#their_message'),
   }
-}
+};
 
 class Message {
   constructor(from, message, date){

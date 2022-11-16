@@ -11,13 +11,8 @@ body {
 .main {
   position: relative;
   margin: 20px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   max-width: 420px;
   height: 533px;
   padding: 8px;
@@ -25,12 +20,8 @@ body {
 }
 
 .nav-panel {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-bottom: 8px;
 }
 
@@ -51,16 +42,9 @@ body {
 }
 
 .window {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
   min-height: 100%;
 }
 
@@ -96,13 +80,10 @@ body {
 
 .type__form,
 .settings__name__form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   min-height: 32px;
   max-height: 64px;
 }
-
 .type__form > *,
 .settings__name__form > * {
   border: 1px solid #000000;
@@ -117,18 +98,14 @@ body {
   padding-left: 7px;
   margin-right: 8px;
   margin-bottom: 8px;
-  -webkit-box-flex: 5;
-      -ms-flex-positive: 5;
-          flex-grow: 5;
+  flex-grow: 5;
   border: 1px solid #000000;
 }
 
 .type__send,
 .form__submit {
   height: 32px;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
 }
 
 .tab-wrap {
@@ -147,17 +124,12 @@ body {
   height: 319px;
   padding: 16px 14px;
   background-color: #fff;
-  -webkit-box-shadow: 0px 0px 63px 2px #444;
-          box-shadow: 0px 0px 63px 2px #444;
+  box-shadow: 0px 0px 63px 2px #444;
 }
 
 .tab__head {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-bottom: 16px;
 }
 
@@ -184,5 +156,4 @@ body {
 
 .closed {
   display: none;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
