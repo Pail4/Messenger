@@ -1,14 +1,14 @@
 import { user } from "./storage.js";
 export const apiData = {
   URLS: {
-    ORIGIN: 'https://chat1-341409.oa.r.appspot.com/',
-    API: 'https://chat1-341409.oa.r.appspot.com/api/',
-    USER: 'https://chat1-341409.oa.r.appspot.com/api/user',
-    getUserData: 'https://chat1-341409.oa.r.appspot.com/api/user/me',
-    MESSAGES: 'https://chat1-341409.oa.r.appspot.com/api/messages/',
+    ORIGIN: 'https://note-lawn.ru/',
+    API: 'https://note-lawn.ru/api/masager',
+    USER: 'https://note-lawn.ru/api/masager/user',
+    getUserData: 'https://note-lawn.ru/api/masager/user/me',
+    MESSAGES: 'https://note-lawn.ru/api/masager/messages/',
     getSocket(){
       user.getUserdata();
-      return `ws://chat1-341409.oa.r.appspot.com/websockets?${user.token}`
+      return `wss://note-lawn.ru/websocket/masager?${user.token}`
     }
   },
   getHeadersUnsigned(){
