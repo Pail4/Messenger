@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "npx parcel build --public-url https://pail4.github.io/Messenger/ index.html",
+    "predeploy": "npx parcel build --public-url /Messenger/ index.html",
     "deploy": "gh-pages -d dist",
     "start": "npx parcel index.html"
   },
